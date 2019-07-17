@@ -8,6 +8,6 @@ const movieSchema = mongoose.model("movies", new Schema({
   image: String,
   description: String,
   showtimes: {type: Array}
-}))
+}), "movies")
 
 module.exports = movieSchema
