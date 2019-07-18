@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.get("/movies/:id", (req, res, next) => {
-  mongoose.getMovie(req.params.id)
+  mongoose.findById(req.params.id)
   .then((movie)=>{
     res.render('movies.hbs', {movie})
   })

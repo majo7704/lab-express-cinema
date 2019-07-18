@@ -6,9 +6,9 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
-const Movie =require('../models/Movie.js')
+const Movie =require('../models/Movie.js')//reqiring schema
 
-router.get('/movies', (req, res, next) => {
+router.get('/movies/:id', (req, res, next) => {
 Movie.find()
   .then(movies =>{
     res.render("movies", {movies})
