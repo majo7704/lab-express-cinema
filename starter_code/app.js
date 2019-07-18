@@ -44,19 +44,29 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-app.get("/movies/:id", (req, res, next) => {
-  mongoose.findById(req.params.id)
-  .then((movie)=>{
-    res.render('movies.hbs', {movie})
+const Movies = require("./models/Movie")
+
+app.get("/movies", (req, res, next) => {
+  Movies.find({})// find always give you an array
+    .then((movies) => {
+      res.render('movies.hbs', {movies})
+    })
+    .catch(err => {
+      console.log('error' + err)
+    })
+})
+
+app.get("/movie/:id", (req, res, next) => {//params : //insted of query ?
+  Movies.findById(req.params.id)
+  .then((movie) => {
+    res.render('movieDetailed.hbs', {movie})
   })
   .catch(err => {
     console.log('error' + err)
   })
 })
-
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
-
 
 
 const index = require('./routes/index');

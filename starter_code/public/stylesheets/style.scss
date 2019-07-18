@@ -5,10 +5,14 @@ Helvetica,
 Arial,
 sans-serif;
 margin: 0 auto;
-background: url('/images/cinema.jpg');
-background-size: 100%;
-}
 
+}
+.ultimate-container {
+  width: 100vw;
+  height: 100vh;
+  background: url('/images/cinema.jpg');
+  background-size: 100%;
+}
 a {
   color: #00B7FF;
 }
