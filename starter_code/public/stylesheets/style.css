@@ -75,8 +75,9 @@ button {
 
 @media only screen and (min-width: 768px) {
   .flex-box {
-    padding: 5%;
-    width: 20%; }
+    padding: 2%;
+    width: 20%;
+    margin: 1%; }
   .movie-box {
     width: 100%; } }
 

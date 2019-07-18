@@ -57,7 +57,6 @@ button {
 .flex-box div {
   height: auto;
   padding: 0;
-  
 }
 
 .timeContainer li{
@@ -84,8 +83,9 @@ button {
 }
 @media only screen and (min-width : 768px) {
   .flex-box {
-    padding:2%;
-    width: 60%;
+    padding: 2%;
+    width: 20%;
+    margin: 1%;
   }
   .movie-box {
     width: 100%;
